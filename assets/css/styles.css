@@ -1,0 +1,269 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --accent-color: #1a1a1a;
+  --hover-color: #1a1a1a;
+  --hover-text-color: #ffffff;
+}
+
+body.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --accent-color: #ffffff;
+  --hover-color: #fefefe;
+  --hover-text-color: #1a1a1a;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Sansation", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  line-height: 1.6;
+}
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--accent-color);
+  position: sticky;
+  top: 0;
+}
+
+.logo h1 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+header ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#toggleTheme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+/* Estiliza o botão completo (a trilha) */
+.toggle-label {
+  display: block;
+  width: 50px;
+  height: 26px;
+  background-color: #1a1a1a; /* Cor da trilha no modo claro */
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* Estiliza a bolinha */
+.toggle-ball {
+  width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Quando o checkbox é checado, a bolinha se move */
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+  transform: translateX(24px); /* Move a bolinha para a direita */
+}
+
+/* Quando o checkbox é checado, a trilha muda de cor para o modo escuro */
+.toggle-checkbox:checked + .toggle-label .toggle-ball {
+    transform: translateX(24px);
+    background-color: #1a1a1a; /* Cor da bolinha no modo escuro */
+}
+
+
+/* Estilos de cor do modo escuro */
+body.dark .toggle-label {
+    background-color: #ffffff;
+}
+
+.toggle-ball img {
+    width: 22px;
+    width: 100%; /* Faz a imagem preencher a bolinha */
+    height: 100%;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.buttons a.btn {
+    margin-top: 2rem;
+   text-decoration: none;
+   padding: 1rem;
+   border: 1px solid var(--accent-color);
+   border-radius: 10px;
+   color: var(--text-color);
+   background: var(--bg-color);
+}
+
+.buttons a.btn:hover {
+    background: var(--hover-color);
+    color: var(--hover-text-color);
+}
+
+#sobre p {
+    font-size: 20px;
+}
+
+/* Sections */
+section {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+section h1 {
+  font-size: 45px;
+  margin-bottom: 3px;
+}
+
+section h2 {
+  font-size: 35px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+.foto-perfil {
+    border-radius: 15px;
+}
+
+/* Skills */
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skills-grid div {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-grid img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+/* Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  background: var(--bg-color);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#contato img {
+    width: 40px;
+}
+
+.contato-item a {
+    color: lightblue;
+}
+
+.contato-item a:hover {
+    color: rgb(32, 47, 52);
+}
+
+.contato-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  gap: 1rem; 
+}
+
+.contato-item {
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem; 
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 1rem;
+  }  
+#sobre p {
+    font-size: 17px;
+}
+  #hero p {
+    font-size: 1rem;
+}
+  section h1 {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2, h3 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  img {
+    max-width: 180px; /* diminui a imagem no celular */
+  }
+}
