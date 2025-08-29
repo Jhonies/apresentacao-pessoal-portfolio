@@ -20,7 +20,7 @@ JavaScript: Lógica de alternância de tema e armazenamento local do estado.
 
 ## ⚙️ Como Usar
 
-Para visualizar o projeto, basta abrir o arquivo www.github.io/Jhonies/apresentacao-pessoal em seu navegador.
+Para visualizar o projeto, basta abrir o link [www.github.io/Jhonies/apresentacao-pessoal](https://jhonies.github.io/apresentacao-pessoal-portfolio/) em seu navegador.
 
 
 ### TODO (Para fazer)
